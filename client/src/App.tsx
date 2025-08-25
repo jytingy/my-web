@@ -1,16 +1,18 @@
 import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import CatVolumeButton from "./components/CatVolumeButton";
 import PopupMenu from "./components/PopupMenu";
 import CoffeeBook from "./components/CoffeeBook";
 import FoodMenu from "./components/FoodMenu";
 import Pancake from "./components/Pancake";
 import PixelChar from "./components/PixelChar";
+import MapleLeaf from "./components/MapleLeaf";
 
 import table from "./assets/table.png";
 import titleFrame from "./assets/title-box.png";
 
 import "./App.css";
-import MapleLeaf from "./components/MapleLeaf";
+import Home from "../Pages/Home.tsx";
 
 function App() {
   const [showPopupMenu, setShowPopupMenu] = useState(false);
@@ -49,6 +51,12 @@ function App() {
       <Pancake />
       
       <MapleLeaf/>
+
+      <Routes>
+        <Route path="/" element={<Home/>} />
+      </Routes>
+
+
 
     </div>
   );
