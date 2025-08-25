@@ -6,14 +6,15 @@ import restaurantRoutes from './routes/restaurant.route.js';
 dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT;
 
 // middleware - function that runs before sending response back to client
 app.use(express.json()); // allows us to accept JSON data in req.body
 
 app.use("/api/restaurants", restaurantRoutes);
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
   connectDB();
-  console.log('Server started at port 5000.')
+  console.log('Server started at:', PORT)
 })
 

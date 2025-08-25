@@ -12,7 +12,7 @@ router.get("/", getRestaurants);
 router.post("/", createRestaurant);
 
 // update function
-router.post("/:id", updateRestaurant);
+router.put("/:id", updateRestaurant);
 
 // delete function
 router.delete("/:id", deleteRestaurant);
