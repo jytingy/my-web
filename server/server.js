@@ -10,6 +10,16 @@ const app = express();
 // middleware - function that runs before sending response back to client
 app.use(express.json()); // allows us to accept JSON data in req.body
 
+app.get("/api/restaurants", async (req, res) => {
+  try {
+    const restaurants = await Restaurant.find({});
+    res.status(200).json({success:true, data: restaurants});
+  } catch(error){
+    console.log("Error in fetching restaurants:", error.message);
+    res.status(500).json({success: false, message: "Server Error"});
+  }
+});
+
 
 // our post function
 app.post("/api/restaurants", async (req, res) => {
@@ -29,6 +39,7 @@ app.post("/api/restaurants", async (req, res) => {
   }
 });
 
+// delete function
 app.delete("/api/restaurants/:id", async (req, res) => {
   const { id } = req.params;
 
@@ -39,6 +50,7 @@ app.delete("/api/restaurants/:id", async (req, res) => {
     }
     res.status(200).json({ success: true, message: "Restaurant Deleted" });
   } catch (error) {
+    console.log("error in deleting product:", error.message);
     res.status(500).json({ success: false, message: "Server Error" });
   }
 });
