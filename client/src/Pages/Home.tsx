@@ -19,7 +19,7 @@ export default function Home() {
 
   // Pixel character button toggle
   const handleCharClick = () => setShowPopupMenu(prev => !prev);
-  const handleFoodClick = () => setShowRestaurantMenu(v => !v);
+  const handleFoodClick = () => setShowRestaurantMenu(prev => !prev);
 
   return (
     <div className="autumn-gif">
