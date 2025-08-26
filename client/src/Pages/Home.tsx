@@ -43,9 +43,10 @@ export default function Home() {
       {showPopupMenu && <PopupMenu/>}
 
       {/* Cafe + restaurants buttons */}
-      <FoodMenu onClick={handleFoodClick}/>
-      {showRestaurantMenu && <RestaurantMenu/>}
+      {/* <FoodMenu onClick={handleFoodClick}/>
+      {showRestaurantMenu && <RestaurantMenu/>} */}
 
+      <RestaurantMenu/>
 
       {/* Books + shows buttons */}
       <CoffeeBook />

@@ -1,26 +1,31 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import popupMenu from "../assets/popup.png";
+import { useRestaurantList } from "../lists/restaurants";
 
 interface Restaurant {
-  _id: string;
   name: string;
   price: string;
-  rating: number;
+  rating: string;
   review: string;
 }
 
 export default function RestaurantMenu() {
+  const [newRestaurant, setNewRestaurant] = useState<Restaurant>({
+    name: "",
+    price: "0",
+    rating: "",
+    review: "",
+  });
 
-  const [newRestaurant, setNewRestaurant] = useState({
-    name:"",
-    price:"",
-    image:"",
-  })
+  const { createRestaurant } = useRestaurantList();
 
-  
+  const handleAddRestaurant = async () => {
+    const { success, message } = await createRestaurant(newRestaurant);
+    console.log("Success:", success);
+    console.log("Message:", message);
+  };
 
-  return (
-    <>
-    </>
-    );
+  return(
+    <button className="button-wrapper" onClick={handleAddRestaurant}/>
+  );
 }
