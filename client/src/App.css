@@ -107,16 +107,6 @@ button:focus {
   z-index: 9999;
 }
 
-.leaf {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  height: 70px;
-  transform: translateX(-50%); /* perfectly center horizontally */
-  filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.5));
-  z-index: 1;
-}
-
 .popup-menu {
   position: fixed;
   margin: 0 auto;    
@@ -125,6 +115,7 @@ button:focus {
   right: 0;        
   height: 800px;
   z-index: 9999;
+  
 }
 
 .popup-list {
@@ -223,43 +214,3 @@ button:focus {
   transform: translateY(-5px)
 }
 
-.wood-panel-container {
-  position: relative; /* establishes a positioning context for the button */
-  display: inline-block; /* so the container fits the panel size */
-  width: fit-content;
-  height: fit-content;
-}
-
-.wood-panel {
-  position: fixed;
-  margin: 0 auto;    
-  top: 300px;             
-  left: 0;
-  right: 0;        
-  height: 600px;
-  z-index: 9999;
-}
-
-.x-button {
-  position: fixed;
-  top: 340px;
-  left: 78em; 
-  height: 3em;
-  background: transparent;
-  border: none;
-  filter: brightness(0.5) drop-shadow(2px 2px rgba(0,0,0,0.7));
-  z-index: 10000;
-}
-
-.socials-text-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  white-space: nowrap;
-  color: rgb(70, 48, 23);
-  font-size: 50px;
-  user-select: none;
-  text-shadow: 1px 0 black, -1px 0 black, 0 1px black, 0 -1px black;
-  pointer-events: none; /* optional: lets clicks pass through */
-}
